@@ -1,0 +1,124 @@
+@white: #ffffff;
+@off-white: #eeeeee;
+@lt-gray: #dddddd;
+@red: #ff0000;
+@dark-red: #990000;
+@light-red: #FF6556;
+    
+// Height variables
+@carousel-height: 300px;
+
+//Mixin
+.zero-margin (@pad-up-dn : 0px, @pad-left-right: 0px) {
+    margin: 0px auto;
+    padding: @pad-up-dn @pad-left-right;
+}
+
+.row-header {
+    .zero-margin();
+}
+
+.row-content {
+    .zero-margin(50px,0px);
+    border-bottom: 1px ridge;
+    min-height: 400px;
+}
+
+.row-footer {
+    .zero-margin(20px,0px);
+    background-color: #afafaf;
+}
+
+jumbotron {
+   .zero-margin(70px,30px);
+    background: @light-red;
+    color: floralwhite;
+}
+
+//Nesting selector
+
+.carousel {
+    background-color: @dark-red;
+    .item {
+        height: @carousel-height;
+        img {
+            left: 0;
+            min-height: @carousel-height;
+            position: absolute;
+            top: 0;
+        }
+    }
+}
+
+.navbar-inverse {
+    background: @red;
+    color: @white;
+    .navbar-nav>.active>a {
+        background: @dark-red;
+         color: @white;
+        &:hover {
+            background: @dark-red;
+            color: @white;
+        }
+        &:focus {
+            background: @dark-red;
+            color: @white;
+        }
+    }
+    .navbar-nav>.open>a {
+        background: @dark-red;
+        color: @white;
+        &:hover {
+            background: @dark-red;
+            color: @white;
+        }
+        &:focus {
+            background: @dark-red;
+            color: @white;
+        }
+    }
+    .navbar-nav {
+        .open {
+            .dropdown-menu>li>a {
+                background-color: @red;
+                color: @off-white;
+                &:hover {
+                    color: #000000;
+                }
+            }
+            .dropdown-menu {
+                background-color: @red;
+                color: @off-white;
+            }
+        }
+    }
+}
+
+address {
+    font-size: 80%;
+    margin: 0px;
+    color: #0f0f0f;
+}
+
+body {
+    align: center;
+    padding: 50px 0px 0px 0px;
+    z-index: 0;
+}
+
+.tab-content {
+    border-left: 1px solid @lt-gray;
+    border-right: 1px solid @lt-gray;
+    border-bottom: 1px solid @lt-gray;
+    padding: 10px;
+}
+
+.affix {
+    top:100px;
+}
+
+#carouselButtons {
+    right: 0px;
+    position: absolute;
+    bottom: 0px;
+}
